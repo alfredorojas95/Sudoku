@@ -37,17 +37,4 @@ public class Met_sudoku {
         }
         return esCuadrado;
     }
-    
-    public void sumar() {
-        int sumaFila = 0, sumaColumna = 0;
-        for (int i = 0; i < sudoku.length; i++) {
-            sumaFila = 0;
-            sumaColumna = 0;
-            for (int j = 0; j < sudoku.length; j++) {
-                sumaFila += sudoku[i][j];
-                sumaColumna += sudoku[j][i];
-            }
-        }
-
-    }
 }

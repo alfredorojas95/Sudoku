@@ -4,15 +4,6 @@ public class GUISudoku extends javax.swing.JFrame {
 
     boolean esNumero = false;
     Met_sudoku accion = new Met_sudoku();
-//    int[][] sud1 = new int[3][3];
-//    int[][] sud2 = new int[3][3];
-//    int[][] sud3 = new int[3][3];
-//    int[][] sud4 = new int[3][3];
-//    int[][] sud5 = new int[3][3];
-//    int[][] sud6 = new int[3][3];
-//    int[][] sud7 = new int[3][3];
-//    int[][] sud8 = new int[3][3];
-//    int[][] sud9 = new int[3][3];
 
     public GUISudoku() {
         initComponents();
@@ -1289,14 +1280,13 @@ public class GUISudoku extends javax.swing.JFrame {
 
     private void capturarEntrada(java.awt.event.KeyEvent evt, javax.swing.JTextField c, int i, int j) {
 
-        boolean estaRepetido = false;
-        boolean esCuadrado = false;
+        boolean estaRepetido;
+        boolean esCuadrado;
         int y = evt.getKeyCode();
         if (y == 8) {//captura la tecla 'retroceso'
             accion.almacenar(i, j, 0);//si se elimina (con retroceso)el valor del texfield se le asigna como nuevo valor el 'cero'
         } else {
             if (esNumero == false) {
-                //if (c.getText() != null) {//contenido del textfield debe ser distinto de nulo
                     int valorTextfield = Integer.parseInt(c.getText());
                     estaRepetido = accion.estaRepetido(i, j, valorTextfield);//verificar repetido en filas y columnas
                     esCuadrado = accion.verificarMatrices(i, j, valorTextfield);
@@ -1305,9 +1295,7 @@ public class GUISudoku extends javax.swing.JFrame {
                     } else {// se encuntra repetido
                         c.setText("");//si está repetido lo borra del texfield y no se guarda en la matriz
                     }
-                //}
-
-            }
+                }
         }
 
     }
@@ -1413,7 +1401,6 @@ public class GUISudoku extends javax.swing.JFrame {
     }//GEN-LAST:event_text13KeyTyped
 
     private void text13KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text13KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text13, 1, 3);
     }//GEN-LAST:event_text13KeyReleased
 
@@ -1422,7 +1409,6 @@ public class GUISudoku extends javax.swing.JFrame {
     }//GEN-LAST:event_text14KeyTyped
 
     private void text14KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text14KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text14, 1, 4);
     }//GEN-LAST:event_text14KeyReleased
 
@@ -1431,47 +1417,38 @@ public class GUISudoku extends javax.swing.JFrame {
     }//GEN-LAST:event_text15KeyTyped
 
     private void text15KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text15KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text15, 1, 5);
     }//GEN-LAST:event_text15KeyReleased
 
     private void text16KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text16KeyTyped
-        // TODO add your handling code here:
         validarEntrada(evt, text16);
     }//GEN-LAST:event_text16KeyTyped
 
     private void text16KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text16KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text16, 2, 3);
     }//GEN-LAST:event_text16KeyReleased
 
     private void text17KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text17KeyTyped
-        // TODO add your handling code here:
         validarEntrada(evt, text17);
     }//GEN-LAST:event_text17KeyTyped
 
     private void text17KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text17KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text17, 2, 4);
     }//GEN-LAST:event_text17KeyReleased
 
     private void text18KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text18KeyTyped
-        // TODO add your handling code here:
-        validarEntrada(evt, text18);
+         validarEntrada(evt, text18);
     }//GEN-LAST:event_text18KeyTyped
 
     private void text18KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text18KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text18, 2, 5);
     }//GEN-LAST:event_text18KeyReleased
 
     private void text19KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text19KeyTyped
-        // TODO add your handling code here:
         validarEntrada(evt, text19);
     }//GEN-LAST:event_text19KeyTyped
 
     private void text19KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text19KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text19, 0, 6);
     }//GEN-LAST:event_text19KeyReleased
 
@@ -1480,87 +1457,70 @@ public class GUISudoku extends javax.swing.JFrame {
     }//GEN-LAST:event_text20KeyTyped
 
     private void text20KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text20KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text20, 0, 7);
     }//GEN-LAST:event_text20KeyReleased
 
     private void text21KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text21KeyTyped
-        // TODO add your handling code here:
         validarEntrada(evt, text21);
     }//GEN-LAST:event_text21KeyTyped
 
     private void text21KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text21KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text21, 0, 8);
     }//GEN-LAST:event_text21KeyReleased
 
     private void text22KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text22KeyTyped
-        // TODO add your handling code here:
         validarEntrada(evt, text22);
     }//GEN-LAST:event_text22KeyTyped
 
     private void text22KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text22KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text22, 1, 6);
     }//GEN-LAST:event_text22KeyReleased
 
     private void text23KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text23KeyTyped
-        // TODO add your handling code here:
         validarEntrada(evt, text23);
     }//GEN-LAST:event_text23KeyTyped
 
     private void text23KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text23KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text23, 1, 7);
     }//GEN-LAST:event_text23KeyReleased
 
     private void text24KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text24KeyTyped
-        // TODO add your handling code here:
         validarEntrada(evt, text24);
     }//GEN-LAST:event_text24KeyTyped
 
     private void text24KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text24KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text24, 1, 8);
     }//GEN-LAST:event_text24KeyReleased
 
     private void text25KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text25KeyTyped
-        // TODO add your handling code here:
         validarEntrada(evt, text25);
     }//GEN-LAST:event_text25KeyTyped
 
     private void text25KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text25KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text25, 2, 6);
     }//GEN-LAST:event_text25KeyReleased
 
     private void text26KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text26KeyTyped
-        // TODO add your handling code here:
         validarEntrada(evt, text26);
     }//GEN-LAST:event_text26KeyTyped
 
     private void text26KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text26KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text26, 2, 7);
     }//GEN-LAST:event_text26KeyReleased
 
     private void text27KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text27KeyTyped
-        // TODO add your handling code here:
         validarEntrada(evt, text27);
     }//GEN-LAST:event_text27KeyTyped
 
     private void text27KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text27KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text27, 2, 8);
     }//GEN-LAST:event_text27KeyReleased
 
     private void text28KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text28KeyTyped
-        // TODO add your handling code here:
         validarEntrada(evt, text28);
     }//GEN-LAST:event_text28KeyTyped
 
     private void text28KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text28KeyReleased
-        // TODO add your handling code here:
         capturarEntrada(evt, text28, 3, 0);
     }//GEN-LAST:event_text28KeyReleased
 
